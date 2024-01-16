@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 
 import { api } from "@/api";
@@ -12,6 +11,7 @@ import BottomSnackBar from "@/components/widgets/BottomSnackBar";
 import Breadcrumbs from "@/components/widgets/Breadcrumbs";
 import Faqs from "@/components/widgets/Faqs";
 import ProductCard from "@/components/widgets/ProductCard";
+import ResponsiveParagraph from "@/components/widgets/ResponsiveParagraph";
 import SocialMediaRibbon from "@/components/widgets/SocialMediaRibbon";
 import Thumbnail from "@/components/widgets/Thumbnail";
 import { downloadAppSnackbar } from "@/content/downloadApp";
@@ -22,52 +22,7 @@ import { langMenu, menuData, sidebarData } from "@/content/menus";
 const VideoCourse = () => {
   const courseRes = useQuery(["courses"], () => api.getCourses());
   const faqRes = useQuery(["faqs"], () => api.getFaqs());
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [showFullText, setshowFullText] = useState<boolean | null>(null);
 
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-  useEffect(() => {
-    if (windowWidth > 720) setshowFullText(null);
-    if (windowWidth < 720) setshowFullText(true);
-  }, [windowWidth]);
-
-  function trimParagraph(text: string, maxWords = 42) {
-    const words = text.split(" ");
-    const trimmedWords = words.slice(0, maxWords);
-    const trimmedText = trimmedWords.join(" ");
-    return showFullText ? (
-      <>
-        {trimmedText} ...
-        <div
-          className="cursor-pointer text-theme"
-          onClick={() => setshowFullText(false)}
-        >
-          और पढ़ें
-        </div>
-      </>
-    ) : (
-      <>
-        {main.hero.paragraph}
-        {showFullText === false && (
-          <div
-            className="cursor-pointer text-theme"
-            onClick={() => setshowFullText(true)}
-          >
-            कम दिखाएं
-          </div>
-        )}
-      </>
-    );
-  }
   return (
     <Container>
       <PrimaryHeader
@@ -91,7 +46,7 @@ const VideoCourse = () => {
               {main.hero.heading}
             </span>
             <span className="text-base leading-relaxed tracking-wide text-gray-600 font-hindi">
-              {trimParagraph(main.hero.paragraph)}
+              <ResponsiveParagraph>{main.hero.paragraph}</ResponsiveParagraph>
             </span>
           </div>
         </div>
