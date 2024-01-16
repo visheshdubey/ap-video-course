@@ -1,5 +1,3 @@
-import React from "react";
-
 import { capitalizeFirstLetter, convertDecToHHMM } from "@/lib/utils";
 import { Course } from "@/types/api/CourseSeriesRes";
 
