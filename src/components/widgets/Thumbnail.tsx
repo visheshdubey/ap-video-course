@@ -1,5 +1,3 @@
-import React from "react";
-
 const Thumbnail = ({ src }: { src: string }) => {
   return (
     <div className="relative w-full shrink-0 md:w-2/5">
