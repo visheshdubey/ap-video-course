@@ -5,7 +5,7 @@ const ProductCard = ({ course }: { course: Course }) => {
   return (
     <div
       key={course.id}
-      className="flex flex-col w-full gap-2 p-4 border-b rounded lg:gap-1 lg:p-2 hover:shadow hover:bg-slate-50 font-hindi"
+      className="flex flex-col w-full gap-2 px-2 py-4 border-b rounded lg:gap-1 lg:p-2 hover:shadow hover:bg-slate-50 font-hindi"
     >
       <div className="flex items-center w-full h-full mx-auto text-sm max-w-screen-2xl">
         <div className="relative px-2 py-1 text-xs text-white rounded-sm min-w-fit ">
@@ -53,9 +53,9 @@ const ProductCard = ({ course }: { course: Course }) => {
         href={`https://acharyaprashant.org/en/video-modules/module/${course.id}`}
         className="flex gap-2 mt-1.5"
       >
-        <span className="text-xs font-medium text-orange-500">ADD TO CART</span>
-        <span className="text-xs font-medium text-orange-500">|</span>
-        <span className="text-xs font-medium text-orange-500">ENROL</span>
+        <span className="text-xs font-medium text-theme">ADD TO CART</span>
+        <span className="text-xs font-medium text-theme">|</span>
+        <span className="text-xs font-medium text-theme">ENROL</span>
       </a>
     </div>
   );

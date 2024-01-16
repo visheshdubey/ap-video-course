@@ -1,3 +1,5 @@
+import { PrimaryMenu } from "@/types/Menus";
+
 const sideBarNavigation = [
   {
     text: "Login",
@@ -135,7 +137,7 @@ export const sidebarData = {
   ),
   login: sideBarNavigation.filter((item) => item.hierarchy.includes("Login")),
 };
-export const menuData = [
+export const menuData: PrimaryMenu[] = [
   { label: "Home", link: "http://example.com/home" },
   {
     label: "Live Sessions",

@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { Icons } from "@/components/icons";
+import { Icons } from "@/components/theme/icons";
 
 export interface FooterItem {
   icons?: ReactNode;

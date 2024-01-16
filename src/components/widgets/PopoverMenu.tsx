@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Tags, TagsRes } from "@/types/api/TagRes";
 
-import { ScrollArea } from "./ui/scroll-area";
+import { ScrollArea } from "../ui/scroll-area";
 
 export function TagsDropdown() {
   const filterByParent = (data: TagsRes, parentValue: number): Tags[] => {

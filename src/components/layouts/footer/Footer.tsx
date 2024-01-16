@@ -1,7 +1,7 @@
 import {
   Footer as FooterType,
   FooterSection as FooterSectionType,
-} from "@/content/footerContent";
+} from "@/content/footer";
 import { cn } from "@/lib/utils";
 
 const FooterSection = ({
@@ -9,13 +9,13 @@ const FooterSection = ({
 }: {
   footerSection: FooterSectionType;
 }) => (
-  <div className="flex flex-col w-full gap-4 px-4 pb-24 mx-auto text-white shrink md:px-4 md:pb-7 md:pt-10">
+  <div className="flex flex-col w-full gap-4 px-4 mx-auto text-white md:pb-24 max-w-screen-2xl md:px-4 pb-7 ">
     <span className="text-lg font-semibold">{footerSection.title}</span>
     {footerSection.items.map((item, index) => (
       <a
         href={item.link}
         key={`moreSection-${index}`}
-        className="flex items-center gap-2 text-white hover:text-orange-700"
+        className="flex items-center gap-2 text-base text-white hover:text-theme"
       >
         {item.icons} {item.text}
       </a>
@@ -34,7 +34,7 @@ const Footer = ({ footerContent }: { footerContent: FooterType }) => {
         <FooterSection footerSection={footerContent.liveEvents} />
         <FooterSection footerSection={footerContent.wisdomContent} />
         <FooterSection footerSection={footerContent.more} />
-        <div className="flex flex-col w-full gap-4 px-4 pb-24 mx-auto text-white max-w-screen-2xl md:px-4 md:pb-7 md:pt-10">
+        <div className="flex flex-col w-full gap-4 px-4 mx-auto text-white md:pb-24 max-w-screen-2xl md:px-4 pb-7 ">
           <span className="text-lg font-semibold">
             {footerContent.socialMedia.title}
           </span>
@@ -47,7 +47,7 @@ const Footer = ({ footerContent }: { footerContent: FooterType }) => {
                 items.icons ? (
                   <a
                     href={items.link}
-                    className="hover:text-orange-700"
+                    className="hover:text-theme"
                     key={`social-${items.text}-${index}`}
                   >
                     {items.icons}
@@ -65,7 +65,7 @@ const Footer = ({ footerContent }: { footerContent: FooterType }) => {
                 items.icons ? (
                   <a
                     href={items.link}
-                    className="hover:text-orange-700"
+                    className="hover:text-theme"
                     key={`social-${items.text}-${index}`}
                   >
                     {items.icons}
@@ -75,7 +75,7 @@ const Footer = ({ footerContent }: { footerContent: FooterType }) => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col w-full gap-4 px-4 pb-24 mx-auto text-white max-w-screen-2xl md:px-4 md:pb-7 md:pt-10">
+        <div className="flex flex-col w-full gap-4 px-4 mx-auto text-white md:pb-24 max-w-screen-2xl md:px-4 pb-7 ">
           <span className="text-lg font-semibold">
             {footerContent.downloadApp.title}
           </span>
@@ -92,7 +92,7 @@ const Footer = ({ footerContent }: { footerContent: FooterType }) => {
               className="mr-4 h-8 w-28   md:w-[114px]"
               key={`footerContent-downloadApp-${index}`}
             >
-              <a href={item.link} className="hover:text-orange-700">
+              <a href={item.link} className="hover:text-theme">
                 <img
                   src={item.image || ""}
                   className={"rounded-md border-[1.4px] border-slate-300"}
