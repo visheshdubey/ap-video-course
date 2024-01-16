@@ -34,9 +34,14 @@ const SnackbarHeader = () => {
             </div>
           </div>
         </div>
-        <button className="px-2 py-1 text-sm text-center transition-all duration-150 border-0 rounded-md bg-theme">
-          Login
-        </button>
+        <div className="flex items-center gap-4">
+          <span className="p-2 rounded cursor-pointer sm:hidden hover:text-orange-100">
+            <Icons.search />
+          </span>
+          <button className="px-2 py-1 text-sm text-center transition-all duration-150 border-0 rounded-md bg-theme">
+            Login
+          </button>
+        </div>
       </div>
     </section>
   );

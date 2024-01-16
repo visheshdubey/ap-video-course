@@ -1,10 +1,10 @@
 import { Menu, Phone } from "lucide-react";
 
 import { Icons } from "@/components/theme/icons";
-import DropDownWithIcon from "@/components/ui/DropDownWithIcon";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import DropDownWithIcon from "@/components/widgets/DropDownWithIcon";
 import { cn } from "@/lib/utils";
 import { LanguageMenu, PrimaryMenu, SideBarMenu } from "@/types/Menus";
 
